@@ -14,6 +14,7 @@ local player = Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
 local hrp = char:WaitForChild("HumanoidRootPart")
 local module = {}
+_G.Config_ = {}
 function module:eq()
     for x, L in pairs(game.Players.LocalPlayer["Backpack"]:GetChildren()) do
 		if L:IsA("Tool") and L["ToolTip"] == "Melee" and not _G.Config_["USESWORD"] then
