@@ -16,14 +16,14 @@ local hrp = char:WaitForChild("HumanoidRootPart")
 local module = {}
 function module:eq()
     for x, L in pairs(game.Players.LocalPlayer["Backpack"]:GetChildren()) do
-		if L:IsA("Tool") and L["ToolTip"] == "Melee" and not _G.USESWORD then
+		if L:IsA("Tool") and L["ToolTip"] == "Melee" and not _G.Config_["USESWORD"] then
 			local a,b = pcall(function ()
                 game.Players.LocalPlayer.Character.Humanoid:EquipTool(L)
             end)
             if a then
                 break
             end
-        elseif L:IsA("Tool") and L["ToolTip"] == "Sword" and _G.USESWORD then
+        elseif L:IsA("Tool") and L["ToolTip"] == "Sword" and _G.Config_["USESWORD"] then
             local a,b = pcall(function ()
                 game.Players.LocalPlayer.Character.Humanoid:EquipTool(L)
             end)
